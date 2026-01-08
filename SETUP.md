@@ -40,7 +40,7 @@ Then open: http://localhost:5173
 
 When you have sign language videos, put them in:
 ```
-public/assets/videos/sign-language/[theme-name]/[word].mp4
+public/assets/videos/sign-language/[theme-name]/[word].MP4
 public/assets/videos/sign-language/[theme-name]/[word].gif
 ```
 
@@ -107,7 +107,7 @@ node generate-themes.js
 
 ### Sign Language Videos
 Your themes.js already has paths configured for:
-- `.mp4` videos (for HTML5 video player)
+- `.MP4` videos (for HTML5 video player)
 - `.gif` animations (for fallback)
 
 Just add the files and they'll work automatically!
@@ -173,7 +173,7 @@ Edit `src/data/games.js` to change:
 2. **Videos not playing?**
    - Add videos to `public/assets/videos/sign-language/`
    - Check file names match image names
-   - Use .mp4 format (H.264 codec)
+   - Use .MP4 format (H.264 codec)
 
 3. **Want to add more themes?**
    - Just create folder and add images

@@ -23,7 +23,7 @@
           <img :src="item.image" :alt="item.name" />
         </div>
         <div class="menu-item-text">
-          <span class="item-name">{{ item.name }}</span>
+          <span class="item-name">{{ getItemName(theme.id, item.id) }}</span>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@ import Button from 'primevue/button'
 
 const { t } = useI18n()
 
-defineProps({
+const props = defineProps({
   theme: {
     type: Object,
     required: true
@@ -71,6 +71,28 @@ const themeNameMap = {
 
 const getThemeName = (themeId) => {
   return t(themeNameMap[themeId] || 'themes.animals')
+}
+
+// Mapping for theme IDs to their translation category names
+const themeToItemCategory = {
+  'body-parts': 'bodyParts',
+  'occupations': 'occupations',
+  'places': 'places'
+}
+
+const getItemName = (themeId, itemId) => {
+  const category = themeToItemCategory[themeId]
+  if (category) {
+    const translationKey = `items.${category}.${itemId}`
+    const translated = t(translationKey)
+    // If translation exists and is different from the key, return it
+    if (translated !== translationKey) {
+      return translated
+    }
+  }
+  // Fallback: find the item in theme.items and return its default name
+  const item = props.theme?.items?.find(i => i.id === itemId)
+  return item?.name || itemId
 }
 </script>
 

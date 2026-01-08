@@ -48,13 +48,13 @@
 
 **Configuration:**
 - All 140 items have video paths in `themes.js`
-- Supports both .mp4 and .gif formats
+- Supports both .MP4 and .gif formats
 - Auto-play with loop enabled
 - Graceful fallback when videos missing
 
 **Video Paths:**
 ```
-/assets/videos/sign-language/[theme]/[item].mp4
+/assets/videos/sign-language/[theme]/[item].MP4
 /assets/videos/sign-language/[theme]/[item].gif
 ```
 
@@ -258,8 +258,8 @@ This is normal if you haven't added videos yet!
 ## Next Steps (Optional)
 
 ### To Add Videos:
-1. Place `.mp4` and `.gif` files in:
-   `public/assets/videos/sign-language/[theme]/[item-name].mp4`
+1. Place `.MP4` and `.gif` files in:
+   `public/assets/videos/sign-language/[theme]/[item-name].MP4`
 2. Refresh page - videos auto-play!
 
 ### To Add Body Parts:

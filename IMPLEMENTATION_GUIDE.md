@@ -46,10 +46,10 @@ public/assets/
 └── videos/
     └── sign-language/
         ├── family/
-        │   ├── mother.mp4
+        │   ├── mother.MP4
         │   └── mother.gif
         └── animals/
-            ├── dog.mp4
+            ├── dog.MP4
             └── dog.gif
 ```
 
@@ -352,7 +352,7 @@ function startMemorizeTimer(duration, onComplete) {
       name: 'Item Name',
       nameSign: 'Native Name',
       image: '/path/to/image.jpg',
-      signVideo: '/path/to/video.mp4',
+      signVideo: '/path/to/video.MP4',
       signGif: '/path/to/animation.gif',
       description: 'Short description'
     }
@@ -592,9 +592,9 @@ public/assets/images/
     └── ...
 
 public/assets/videos/sign-language/new-theme/
-├── item1.mp4
+├── item1.MP4
 ├── item1.gif
-├── item2.mp4
+├── item2.MP4
 └── ...
 ```
 
@@ -613,7 +613,7 @@ export const themes = [
         id: 'item1',
         name: 'Item 1',
         image: '/assets/images/themes/new-theme/item1.jpg',
-        signVideo: '/assets/videos/sign-language/new-theme/item1.mp4',
+        signVideo: '/assets/videos/sign-language/new-theme/item1.MP4',
         signGif: '/assets/videos/sign-language/new-theme/item1.gif',
         description: 'Description of item 1'
       }

@@ -88,5 +88,39 @@
     "english": "English",
     "russian": "Русский",
     "uzbek": "O'zbek"
+  },
+  "items": {
+    "bodyParts": {
+      "ear": "Ухо",
+      "eye": "Глаз",
+      "finger": "Палец",
+      "hand": "Рука",
+      "head": "Голова",
+      "leg": "Нога",
+      "nose": "Нос",
+      "tongue": "Язык"
+    },
+    "occupations": {
+      "builder": "Строитель",
+      "cook": "Повар",
+      "doctor": "Врач",
+      "driver": "Водитель",
+      "farmer": "Фермер",
+      "firefighter": "Пожарный",
+      "hairdresser": "Парикмахер",
+      "musician": "Музыкант",
+      "painter": "Художник",
+      "salesman": "Продавец",
+      "teacher": "Учитель"
+    },
+    "places": {
+      "hospital": "Больница",
+      "kindergarten": "Детский сад",
+      "pharmacy": "Аптека",
+      "restaurant": "Ресторан",
+      "school": "Школа",
+      "store": "Магазин",
+      "street": "Улица"
+    }
   }
 }

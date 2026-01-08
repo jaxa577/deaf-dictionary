@@ -109,19 +109,19 @@ Your videos should already be in:
 ```
 public/assets/videos/sign-language/
 ├── action-words/
-│   ├── draw.mp4
+│   ├── draw.MP4
 │   ├── draw.gif
-│   ├── drink.mp4
+│   ├── drink.MP4
 │   ├── drink.gif
 │   └── ... (all action words)
 ├── animals/
-│   ├── cat.mp4
+│   ├── cat.MP4
 │   ├── cat.gif
-│   ├── dog.mp4
+│   ├── dog.MP4
 │   ├── dog.gif
 │   └── ... (all animals)
 ├── vegetables/
-│   ├── carrot.mp4
+│   ├── carrot.MP4
 │   ├── carrot.gif
 │   └── ... (all vegetables)
 └── ... (all other themes)

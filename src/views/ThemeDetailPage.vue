@@ -20,7 +20,7 @@
         <div v-if="activeItem" class="item-display">
           <!-- Item Name -->
           <div class="item-header">
-            <h1 class="item-name">{{ activeItem.name }}</h1>
+            <h1 class="item-name">{{ getItemName(theme.id, activeItem.id) }}</h1>
             <p v-if="activeItem.description" class="item-description">
               {{ activeItem.description }}
             </p>
@@ -84,6 +84,7 @@
 <script setup>
 import { ref, computed, onMounted, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { useI18n } from "vue-i18n";
 import Button from "primevue/button";
 import ProgressSpinner from "primevue/progressspinner";
 import SideMenu from "@/components/common/SideMenu.vue";
@@ -93,6 +94,7 @@ import { getThemeById } from "@/data/themes";
 
 const route = useRoute();
 const router = useRouter();
+const { t } = useI18n();
 
 const theme = ref(null);
 const activeItemId = ref("");
@@ -158,6 +160,28 @@ const goToNext = () => {
 
 const goBack = () => {
   router.push({ name: "home" });
+};
+
+// Mapping for theme IDs to their translation category names
+const themeToItemCategory = {
+  'body-parts': 'bodyParts',
+  'occupations': 'occupations',
+  'places': 'places'
+};
+
+const getItemName = (themeId, itemId) => {
+  const category = themeToItemCategory[themeId];
+  if (category) {
+    const translationKey = `items.${category}.${itemId}`;
+    const translated = t(translationKey);
+    // If translation exists and is different from the key, return it
+    if (translated !== translationKey) {
+      return translated;
+    }
+  }
+  // Fallback: find the item in theme.items and return its default name
+  const item = theme.value?.items?.find(i => i.id === itemId);
+  return item?.name || itemId;
 };
 </script>
 

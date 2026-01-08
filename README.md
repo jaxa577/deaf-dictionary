@@ -172,7 +172,7 @@ Edit `src/data/themes.js`:
       id: 'item1',
       name: 'Item Name',
       image: '/assets/images/themes/new-theme/item1.jpg',
-      signVideo: '/assets/videos/sign-language/new-theme/item1.mp4',
+      signVideo: '/assets/videos/sign-language/new-theme/item1.MP4',
       signGif: '/assets/videos/sign-language/new-theme/item1.gif',
       description: 'Description of the item'
     }

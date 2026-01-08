@@ -133,7 +133,7 @@ const themes = themeFolders.map(folder => {
       id: itemId,
       name: itemName,
       image: `/assets/images/themes/${folder}/${file}`,
-      signVideo: `/assets/videos/sign-language/${folder}/${fileName}.mp4`,
+      signVideo: `/assets/videos/sign-language/${folder}/${fileName}.MP4`,
       signGif: `/assets/videos/sign-language/${folder}/${fileName}.gif`,
       description: `Learn about ${itemName.toLowerCase()}`
     }

@@ -155,6 +155,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import Button from 'primevue/button'
 import VideoPlayer from '@/components/common/VideoPlayer.vue'
 import { themes } from '@/data/themes.js'
@@ -172,6 +173,8 @@ const props = defineProps({
 
 const emit = defineEmits(['close', 'finish'])
 
+const { t } = useI18n()
+
 // Game state
 const score = ref(0)
 const correctAnswers = ref(0)
@@ -187,6 +190,30 @@ const correctAnswer = ref(null)
 // Get theme data
 const getThemeData = () => {
   return themes.find(t => t.id === props.themeId)
+}
+
+// Mapping for theme IDs to their translation category names
+const themeToItemCategory = {
+  'body-parts': 'bodyParts',
+  'occupations': 'occupations',
+  'places': 'places'
+}
+
+// Helper to get translated item name
+const getItemName = (themeId, itemId) => {
+  const category = themeToItemCategory[themeId]
+  if (category) {
+    const translationKey = `items.${category}.${itemId}`
+    const translated = t(translationKey)
+    // If translation exists and is different from the key, return it
+    if (translated !== translationKey) {
+      return translated
+    }
+  }
+  // Fallback: find the item in theme.items and return its default name
+  const theme = getThemeData()
+  const item = theme?.items?.find(i => i.id === itemId)
+  return item?.name || itemId
 }
 
 // Shuffle array helper
@@ -220,25 +247,25 @@ const generateQuestions = () => {
     if (props.variation === 'word-to-picture') {
       return {
         type: 'word',
-        content: item.name,
+        content: getItemName(props.themeId, item.id),
         correctAnswer: item.id,
         options: allOptions.map(opt => ({
           id: opt.id,
           type: 'picture',
           image: opt.image,
-          caption: opt.name
+          caption: getItemName(props.themeId, opt.id)
         }))
       }
     } else if (props.variation === 'picture-to-word') {
       return {
         type: 'picture',
         image: item.image,
-        content: item.name,
+        content: getItemName(props.themeId, item.id),
         correctAnswer: item.id,
         options: allOptions.map(opt => ({
           id: opt.id,
           type: 'word',
-          content: opt.name
+          content: getItemName(props.themeId, opt.id)
         }))
       }
     } else if (props.variation === 'sign-to-word') {
@@ -250,7 +277,7 @@ const generateQuestions = () => {
         options: allOptions.map(opt => ({
           id: opt.id,
           type: 'word',
-          content: opt.name
+          content: getItemName(props.themeId, opt.id)
         }))
       }
     }

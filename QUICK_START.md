@@ -129,7 +129,7 @@ Replace placeholder data in `src/data/themes.js`:
       id: 'mother',
       name: 'Mother',
       image: '/assets/images/themes/family/mother.jpg',  // Your image
-      signVideo: '/assets/videos/sign-language/family/mother.mp4', // Your video
+      signVideo: '/assets/videos/sign-language/family/mother.MP4', // Your video
       signGif: '/assets/videos/sign-language/family/mother.gif',
       description: 'A person who takes care of you'
     }

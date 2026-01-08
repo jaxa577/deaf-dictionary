@@ -88,5 +88,39 @@
     "english": "English",
     "russian": "Русский",
     "uzbek": "O'zbek"
+  },
+  "items": {
+    "bodyParts": {
+      "ear": "Quloq",
+      "eye": "Ko'z",
+      "finger": "Barmoq",
+      "hand": "Qo'l",
+      "head": "Bosh",
+      "leg": "Oyoq",
+      "nose": "Burun",
+      "tongue": "Til"
+    },
+    "occupations": {
+      "builder": "Quruvchi",
+      "cook": "Oshpaz",
+      "doctor": "Shifokor",
+      "driver": "Haydovchi",
+      "farmer": "Fermer",
+      "firefighter": "O't o'chiruvchi",
+      "hairdresser": "Sartarosh",
+      "musician": "Musiqachi",
+      "painter": "Rassom",
+      "salesman": "Sotuvchi",
+      "teacher": "O'qituvchi"
+    },
+    "places": {
+      "hospital": "Kasalxona",
+      "kindergarten": "Bog'cha",
+      "pharmacy": "Dorixona",
+      "restaurant": "Restoran",
+      "school": "Maktab",
+      "store": "Do'kon",
+      "street": "Ko'cha"
+    }
   }
 }
