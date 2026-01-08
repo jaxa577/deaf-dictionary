@@ -226,10 +226,75 @@ export const themes = [
     "id": "body-parts",
     "name": "Body Parts",
     "nameSign": "Части тела",
-    "coverImage": "/assets/images/theme-covers/body-parts.jpg",
+    "coverImage": "/assets/images/themes/body-parts/ear.png",
     "backgroundColor": "#FFDAB9",
     "icon": "pi pi-user",
-    "items": []
+    "items": [
+      {
+        "id": "ear",
+        "name": "Ear",
+        "image": "/assets/images/themes/body-parts/ear.png",
+        "signVideo": "/assets/videos/sign-language/body-parts/ear.mp4",
+        "signGif": "/assets/videos/sign-language/body-parts/ear.gif",
+        "description": "Learn about ear"
+      },
+      {
+        "id": "eye",
+        "name": "Eye",
+        "image": "/assets/images/themes/body-parts/eye.png",
+        "signVideo": "/assets/videos/sign-language/body-parts/eye.mp4",
+        "signGif": "/assets/videos/sign-language/body-parts/eye.gif",
+        "description": "Learn about eye"
+      },
+      {
+        "id": "finger",
+        "name": "Finger",
+        "image": "/assets/images/themes/body-parts/finger.png",
+        "signVideo": "/assets/videos/sign-language/body-parts/finger.mp4",
+        "signGif": "/assets/videos/sign-language/body-parts/finger.gif",
+        "description": "Learn about finger"
+      },
+      {
+        "id": "hand",
+        "name": "Hand",
+        "image": "/assets/images/themes/body-parts/hand.png",
+        "signVideo": "/assets/videos/sign-language/body-parts/hand.mp4",
+        "signGif": "/assets/videos/sign-language/body-parts/hand.gif",
+        "description": "Learn about hand"
+      },
+      {
+        "id": "head",
+        "name": "Head",
+        "image": "/assets/images/themes/body-parts/head.png",
+        "signVideo": "/assets/videos/sign-language/body-parts/head.mp4",
+        "signGif": "/assets/videos/sign-language/body-parts/head.gif",
+        "description": "Learn about head"
+      },
+      {
+        "id": "leg",
+        "name": "Leg",
+        "image": "/assets/images/themes/body-parts/leg.png",
+        "signVideo": "/assets/videos/sign-language/body-parts/leg.mp4",
+        "signGif": "/assets/videos/sign-language/body-parts/leg.gif",
+        "description": "Learn about leg"
+      },
+      {
+        "id": "nose",
+        "name": "Nose",
+        "image": "/assets/images/themes/body-parts/nose.png",
+        "signVideo": "/assets/videos/sign-language/body-parts/nose.mp4",
+        "signGif": "/assets/videos/sign-language/body-parts/nose.gif",
+        "description": "Learn about nose"
+      },
+      {
+        "id": "tongue",
+        "name": "Tongue",
+        "image": "/assets/images/themes/body-parts/tongue.png",
+        "signVideo": "/assets/videos/sign-language/body-parts/tongue.mp4",
+        "signGif": "/assets/videos/sign-language/body-parts/tongue.gif",
+        "description": "Learn about tongue"
+      }
+    ]
   },
   {
     "id": "clothes",
@@ -722,12 +787,12 @@ export const themes = [
         "description": "Learn about vaccum cleaner"
       },
       {
-        "id": "waching-machine",
-        "name": "Waching machine",
-        "image": "/assets/images/themes/household-appliances/waching-machine.jpg",
-        "signVideo": "/assets/videos/sign-language/household-appliances/waching-machine.mp4",
-        "signGif": "/assets/videos/sign-language/household-appliances/waching-machine.gif",
-        "description": "Learn about waching machine"
+        "id": "washing-machine",
+        "name": "Washing machine",
+        "image": "/assets/images/themes/household-appliances/washing-machine.jpg",
+        "signVideo": "/assets/videos/sign-language/household-appliances/washing-machine.mp4",
+        "signGif": "/assets/videos/sign-language/household-appliances/washing-machine.gif",
+        "description": "Learn about washing machine"
       }
     ]
   },
@@ -814,12 +879,20 @@ export const themes = [
         "description": "Learn about cloud"
       },
       {
-        "id": "day-night",
-        "name": "Day night",
-        "image": "/assets/images/themes/natural-phenomena/day-night.jpg",
-        "signVideo": "/assets/videos/sign-language/natural-phenomena/day-night.mp4",
-        "signGif": "/assets/videos/sign-language/natural-phenomena/day-night.gif",
-        "description": "Learn about day night"
+        "id": "day",
+        "name": "Day",
+        "image": "/assets/images/themes/natural-phenomena/day.png",
+        "signVideo": "/assets/videos/sign-language/natural-phenomena/day.mp4",
+        "signGif": "/assets/videos/sign-language/natural-phenomena/day.gif",
+        "description": "Learn about day"
+      },
+      {
+        "id": "night",
+        "name": "Night",
+        "image": "/assets/images/themes/natural-phenomena/night.png",
+        "signVideo": "/assets/videos/sign-language/natural-phenomena/night.mp4",
+        "signGif": "/assets/videos/sign-language/natural-phenomena/night.gif",
+        "description": "Learn about night"
       },
       {
         "id": "rain",
@@ -852,6 +925,170 @@ export const themes = [
         "signVideo": "/assets/videos/sign-language/natural-phenomena/wind.mp4",
         "signGif": "/assets/videos/sign-language/natural-phenomena/wind.gif",
         "description": "Learn about wind"
+      }
+    ]
+  },
+  {
+    "id": "occupations",
+    "name": "Occupations",
+    "nameSign": "",
+    "coverImage": "/assets/images/themes/occupations/builder.jpg",
+    "backgroundColor": "#CCCCCC",
+    "icon": "pi pi-circle",
+    "items": [
+      {
+        "id": "builder",
+        "name": "Builder",
+        "image": "/assets/images/themes/occupations/builder.jpg",
+        "signVideo": "/assets/videos/sign-language/occupations/builder.mp4",
+        "signGif": "/assets/videos/sign-language/occupations/builder.gif",
+        "description": "Learn about builder"
+      },
+      {
+        "id": "cook",
+        "name": "Cook",
+        "image": "/assets/images/themes/occupations/cook.jpg",
+        "signVideo": "/assets/videos/sign-language/occupations/cook.mp4",
+        "signGif": "/assets/videos/sign-language/occupations/cook.gif",
+        "description": "Learn about cook"
+      },
+      {
+        "id": "doctor",
+        "name": "Doctor",
+        "image": "/assets/images/themes/occupations/doctor.jpg",
+        "signVideo": "/assets/videos/sign-language/occupations/doctor.mp4",
+        "signGif": "/assets/videos/sign-language/occupations/doctor.gif",
+        "description": "Learn about doctor"
+      },
+      {
+        "id": "driver",
+        "name": "Driver",
+        "image": "/assets/images/themes/occupations/driver.jpg",
+        "signVideo": "/assets/videos/sign-language/occupations/driver.mp4",
+        "signGif": "/assets/videos/sign-language/occupations/driver.gif",
+        "description": "Learn about driver"
+      },
+      {
+        "id": "farmer",
+        "name": "Farmer",
+        "image": "/assets/images/themes/occupations/farmer.jpg",
+        "signVideo": "/assets/videos/sign-language/occupations/farmer.mp4",
+        "signGif": "/assets/videos/sign-language/occupations/farmer.gif",
+        "description": "Learn about farmer"
+      },
+      {
+        "id": "firefighter",
+        "name": "Firefighter",
+        "image": "/assets/images/themes/occupations/firefighter.jpg",
+        "signVideo": "/assets/videos/sign-language/occupations/firefighter.mp4",
+        "signGif": "/assets/videos/sign-language/occupations/firefighter.gif",
+        "description": "Learn about firefighter"
+      },
+      {
+        "id": "hairdresser",
+        "name": "Hairdresser",
+        "image": "/assets/images/themes/occupations/hairdresser.jpg",
+        "signVideo": "/assets/videos/sign-language/occupations/hairdresser.mp4",
+        "signGif": "/assets/videos/sign-language/occupations/hairdresser.gif",
+        "description": "Learn about hairdresser"
+      },
+      {
+        "id": "musician",
+        "name": "Musician",
+        "image": "/assets/images/themes/occupations/musician.jpg",
+        "signVideo": "/assets/videos/sign-language/occupations/musician.mp4",
+        "signGif": "/assets/videos/sign-language/occupations/musician.gif",
+        "description": "Learn about musician"
+      },
+      {
+        "id": "painter",
+        "name": "Painter",
+        "image": "/assets/images/themes/occupations/painter.jpg",
+        "signVideo": "/assets/videos/sign-language/occupations/painter.mp4",
+        "signGif": "/assets/videos/sign-language/occupations/painter.gif",
+        "description": "Learn about painter"
+      },
+      {
+        "id": "salesman",
+        "name": "Salesman",
+        "image": "/assets/images/themes/occupations/salesman.jpg",
+        "signVideo": "/assets/videos/sign-language/occupations/salesman.mp4",
+        "signGif": "/assets/videos/sign-language/occupations/salesman.gif",
+        "description": "Learn about salesman"
+      },
+      {
+        "id": "teacher",
+        "name": "Teacher",
+        "image": "/assets/images/themes/occupations/teacher.jpg",
+        "signVideo": "/assets/videos/sign-language/occupations/teacher.mp4",
+        "signGif": "/assets/videos/sign-language/occupations/teacher.gif",
+        "description": "Learn about teacher"
+      }
+    ]
+  },
+  {
+    "id": "places",
+    "name": "Places",
+    "nameSign": "",
+    "coverImage": "/assets/images/themes/places/hospital.jpg",
+    "backgroundColor": "#CCCCCC",
+    "icon": "pi pi-circle",
+    "items": [
+      {
+        "id": "hospital",
+        "name": "Hospital",
+        "image": "/assets/images/themes/places/hospital.jpg",
+        "signVideo": "/assets/videos/sign-language/places/hospital.mp4",
+        "signGif": "/assets/videos/sign-language/places/hospital.gif",
+        "description": "Learn about hospital"
+      },
+      {
+        "id": "kindergarten",
+        "name": "Kindergarten",
+        "image": "/assets/images/themes/places/kindergarten.jpg",
+        "signVideo": "/assets/videos/sign-language/places/kindergarten.mp4",
+        "signGif": "/assets/videos/sign-language/places/kindergarten.gif",
+        "description": "Learn about kindergarten"
+      },
+      {
+        "id": "pharmacy",
+        "name": "Pharmacy",
+        "image": "/assets/images/themes/places/pharmacy.jpg",
+        "signVideo": "/assets/videos/sign-language/places/pharmacy.mp4",
+        "signGif": "/assets/videos/sign-language/places/pharmacy.gif",
+        "description": "Learn about pharmacy"
+      },
+      {
+        "id": "restaurant",
+        "name": "Restaurant",
+        "image": "/assets/images/themes/places/restaurant.jpg",
+        "signVideo": "/assets/videos/sign-language/places/restaurant.mp4",
+        "signGif": "/assets/videos/sign-language/places/restaurant.gif",
+        "description": "Learn about restaurant"
+      },
+      {
+        "id": "school",
+        "name": "School",
+        "image": "/assets/images/themes/places/school.jpg",
+        "signVideo": "/assets/videos/sign-language/places/school.mp4",
+        "signGif": "/assets/videos/sign-language/places/school.gif",
+        "description": "Learn about school"
+      },
+      {
+        "id": "store",
+        "name": "Store",
+        "image": "/assets/images/themes/places/store.jpg",
+        "signVideo": "/assets/videos/sign-language/places/store.mp4",
+        "signGif": "/assets/videos/sign-language/places/store.gif",
+        "description": "Learn about store"
+      },
+      {
+        "id": "street",
+        "name": "Street",
+        "image": "/assets/images/themes/places/street.jpg",
+        "signVideo": "/assets/videos/sign-language/places/street.mp4",
+        "signGif": "/assets/videos/sign-language/places/street.gif",
+        "description": "Learn about street"
       }
     ]
   },

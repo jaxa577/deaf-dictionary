@@ -1,5 +1,9 @@
 <template>
   <div v-if="theme" class="theme-detail-page">
+    <div class="language-switcher-container">
+      <LanguageSwitcher />
+    </div>
+
     <div class="content-wrapper">
       <!-- Left Menu -->
       <aside class="sidebar">
@@ -23,6 +27,7 @@
           </div>
 
           <!-- Item Image -->
+          <!-- <div class="item-image-video-wrapper"> -->
           <div class="item-image-container">
             <img
               :src="activeItem.image"
@@ -38,12 +43,13 @@
             :alt="`Sign language for ${activeItem.name}`"
             :caption="`Sign: ${activeItem.name}`"
           />
+          <!-- </di v> -->
 
           <!-- Navigation Buttons -->
           <div class="navigation-buttons">
             <Button
               icon="pi pi-arrow-left"
-              label="Previous"
+              :label="$t('theme.previous')"
               class="nav-button prev-button"
               :disabled="!hasPrevious"
               @click="goToPrevious"
@@ -52,7 +58,7 @@
             <Button
               icon="pi pi-arrow-right"
               iconPos="right"
-              label="Next"
+              :label="$t('theme.next')"
               class="nav-button next-button"
               :disabled="!hasNext"
               @click="goToNext"
@@ -63,7 +69,7 @@
 
         <div v-else class="no-item">
           <i class="pi pi-info-circle"></i>
-          <p>Select an item from the menu</p>
+          <p>{{ $t('theme.selectItem') }}</p>
         </div>
       </main>
     </div>
@@ -76,77 +82,83 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import Button from 'primevue/button'
-import ProgressSpinner from 'primevue/progressspinner'
-import SideMenu from '@/components/common/SideMenu.vue'
-import VideoPlayer from '@/components/common/VideoPlayer.vue'
-import { getThemeById } from '@/data/themes'
+import { ref, computed, onMounted, watch } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import Button from "primevue/button";
+import ProgressSpinner from "primevue/progressspinner";
+import SideMenu from "@/components/common/SideMenu.vue";
+import VideoPlayer from "@/components/common/VideoPlayer.vue";
+import LanguageSwitcher from "@/components/common/LanguageSwitcher.vue";
+import { getThemeById } from "@/data/themes";
 
-const route = useRoute()
-const router = useRouter()
+const route = useRoute();
+const router = useRouter();
 
-const theme = ref(null)
-const activeItemId = ref('')
+const theme = ref(null);
+const activeItemId = ref("");
 
 // Load theme data
 const loadTheme = () => {
-  const themeId = route.params.themeId
-  theme.value = getThemeById(themeId)
+  const themeId = route.params.themeId;
+  theme.value = getThemeById(themeId);
 
   if (theme.value && theme.value.items.length > 0) {
     // Set first item as active by default, or use query param
-    activeItemId.value = route.query.itemId || theme.value.items[0].id
+    activeItemId.value = route.query.itemId || theme.value.items[0].id;
   }
-}
+};
 
 onMounted(() => {
-  loadTheme()
-})
+  loadTheme();
+});
 
-watch(() => route.params.themeId, () => {
-  loadTheme()
-})
+watch(
+  () => route.params.themeId,
+  () => {
+    loadTheme();
+  }
+);
 
 // Active item
 const activeItem = computed(() => {
-  return theme.value?.items.find(item => item.id === activeItemId.value)
-})
+  return theme.value?.items.find((item) => item.id === activeItemId.value);
+});
 
 // Current index
 const currentIndex = computed(() => {
-  return theme.value?.items.findIndex(item => item.id === activeItemId.value) ?? -1
-})
+  return (
+    theme.value?.items.findIndex((item) => item.id === activeItemId.value) ?? -1
+  );
+});
 
 // Navigation
-const hasPrevious = computed(() => currentIndex.value > 0)
+const hasPrevious = computed(() => currentIndex.value > 0);
 const hasNext = computed(() => {
-  return theme.value && currentIndex.value < theme.value.items.length - 1
-})
+  return theme.value && currentIndex.value < theme.value.items.length - 1;
+});
 
 const selectItem = (itemId) => {
-  activeItemId.value = itemId
-  router.replace({ query: { itemId } })
-}
+  activeItemId.value = itemId;
+  router.replace({ query: { itemId } });
+};
 
 const goToPrevious = () => {
   if (hasPrevious.value) {
-    const prevItem = theme.value.items[currentIndex.value - 1]
-    selectItem(prevItem.id)
+    const prevItem = theme.value.items[currentIndex.value - 1];
+    selectItem(prevItem.id);
   }
-}
+};
 
 const goToNext = () => {
   if (hasNext.value) {
-    const nextItem = theme.value.items[currentIndex.value + 1]
-    selectItem(nextItem.id)
+    const nextItem = theme.value.items[currentIndex.value + 1];
+    selectItem(nextItem.id);
   }
-}
+};
 
 const goBack = () => {
-  router.push({ name: 'home' })
-}
+  router.push({ name: "home" });
+};
 </script>
 
 <style scoped>
@@ -154,6 +166,24 @@ const goBack = () => {
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 20px;
+  position: relative;
+}
+
+.language-switcher-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .content-wrapper {
@@ -206,7 +236,13 @@ const goBack = () => {
   margin: 0;
   line-height: 1.6;
 }
-
+.item-image-video-wrapper {
+  display: flex;
+  gap: 32px;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
+}
 .item-image-container {
   width: 100%;
   max-width: 500px;
@@ -220,7 +256,7 @@ const goBack = () => {
 .item-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .navigation-buttons {

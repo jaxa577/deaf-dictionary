@@ -12,28 +12,55 @@
     <template #title>
       <div class="theme-card-title">
         <i :class="theme.icon" class="theme-icon"></i>
-        <span>{{ theme.name }}</span>
+        <span>{{ getThemeName(theme.id) }}</span>
       </div>
     </template>
     <template #content>
       <div class="theme-card-content">
-        <p class="item-count">{{ theme.items.length }} words to learn</p>
+        <p class="item-count">{{ $t('home.itemsCount', { count: theme.items.length }) }}</p>
       </div>
     </template>
   </Card>
 </template>
 
 <script setup>
-import Card from 'primevue/card'
+import { useI18n } from 'vue-i18n'
+import Card from "primevue/card";
+
+const { t } = useI18n()
 
 defineProps({
   theme: {
     type: Object,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 
-defineEmits(['select'])
+defineEmits(["select"]);
+
+const themeNameMap = {
+  'action-words': 'themes.actionWords',
+  'animals': 'themes.animals',
+  'body-parts': 'themes.bodyParts',
+  'clothes': 'themes.clothes',
+  'colors': 'themes.colors',
+  'dishes': 'themes.dishes',
+  'food': 'themes.food',
+  'furniture': 'themes.furniture',
+  'household-appliances': 'themes.householdAppliances',
+  'insects': 'themes.insects',
+  'natural-phenomena': 'themes.naturalPhenomena',
+  'occupations': 'themes.occupations',
+  'places': 'themes.places',
+  'school-supplies': 'themes.schoolSupplies',
+  'transports': 'themes.transport',
+  'vegetables': 'themes.vegetables',
+  'wild-animals': 'themes.wildAnimals'
+}
+
+const getThemeName = (themeId) => {
+  return t(themeNameMap[themeId] || 'themes.animals')
+}
 </script>
 
 <style scoped>

@@ -1,0 +1,92 @@
+{
+  "app": {
+    "title": "Sign Language Learning"
+  },
+  "home": {
+    "title": "Choose a Theme",
+    "subtitle": "Learn sign language through fun themes",
+    "gamesButton": "Play Games!",
+    "itemsCount": "{count} words to learn"
+  },
+  "theme": {
+    "backButton": "Back",
+    "previous": "Previous",
+    "next": "Next",
+    "videoNotAvailable": "Video not available",
+    "selectItem": "Select an item from the menu"
+  },
+  "games": {
+    "title": "Learning Games",
+    "subtitle": "Practice and test your knowledge",
+    "backButton": "Back to themes",
+    "selectTheme": "Select Theme",
+    "selectVariation": "Select Variation",
+    "selectMode": "Select Mode",
+    "selectDifficulty": "Select Difficulty",
+    "startGame": "Start Game",
+    "playAgain": "Play Again",
+    "close": "Close",
+    "score": "Score:",
+    "question": "Question",
+    "gameComplete": "Game Complete!",
+    "correct": "Correct",
+    "wrong": "Wrong",
+    "seeResults": "See Results",
+    "nextQuestion": "Next Question",
+    "finish": "Finish"
+  },
+  "whoIsIt": {
+    "title": "Who Is It?",
+    "description": "Match words with pictures",
+    "wordToPicture": "Word to Picture",
+    "pictureToWord": "Picture to Word",
+    "signToWord": "Sign to Word",
+    "findPictureFor": "Find the picture for:",
+    "whatIsThis": "What is this?",
+    "whatSignIsThis": "What sign is this?",
+    "greatJob": "Great job!",
+    "tryAgain": "Try again!"
+  },
+  "findPair": {
+    "title": "Find the Pair",
+    "description": "Memory matching game",
+    "faceUp": "Face Up",
+    "faceDown": "Face Down",
+    "moves": "Moves:",
+    "wellDone": "Well done!",
+    "youWon": "You won in {moves} moves!"
+  },
+  "whoDisappeared": {
+    "title": "Who Disappeared?",
+    "description": "Remember and find the missing item",
+    "itemCount": "Number of items",
+    "memorize": "Memorize!",
+    "guess": "Who disappeared?",
+    "timeLeft": "Time left:"
+  },
+  "themes": {
+    "actionWords": "Action Words",
+    "animals": "Animals",
+    "bodyParts": "Body Parts",
+    "clothes": "Clothes",
+    "colors": "Colors",
+    "dishes": "Dishes",
+    "food": "Food",
+    "furniture": "Furniture",
+    "householdAppliances": "Household Appliances",
+    "insects": "Insects",
+    "naturalPhenomena": "Natural Phenomena",
+    "occupations": "Occupations",
+    "places": "Places",
+    "schoolSupplies": "School Supplies",
+    "transport": "Transport",
+    "vegetables": "Vegetables",
+    "wildAnimals": "Wild Animals"
+  },
+  "settings": {
+    "language": "Language",
+    "english": "English",
+    "russian": "Русский",
+    "uzbek": "O'zbek"
+  }
+}

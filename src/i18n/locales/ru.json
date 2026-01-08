@@ -1,0 +1,92 @@
+{
+  "app": {
+    "title": "Изучение жестового языка"
+  },
+  "home": {
+    "title": "Выберите тему",
+    "subtitle": "Учите жестовый язык через интересные темы",
+    "gamesButton": "Играть в игры!",
+    "itemsCount": "{count} слов для изучения"
+  },
+  "theme": {
+    "backButton": "Назад",
+    "previous": "Предыдущий",
+    "next": "Следующий",
+    "videoNotAvailable": "Видео недоступно",
+    "selectItem": "Выберите элемент из меню"
+  },
+  "games": {
+    "title": "Обучающие игры",
+    "subtitle": "Практикуйте и проверяйте свои знания",
+    "backButton": "Вернуться к темам",
+    "selectTheme": "Выберите тему",
+    "selectVariation": "Выберите вариант",
+    "selectMode": "Выберите режим",
+    "selectDifficulty": "Выберите сложность",
+    "startGame": "Начать игру",
+    "playAgain": "Играть снова",
+    "close": "Закрыть",
+    "score": "Счет:",
+    "question": "Вопрос",
+    "gameComplete": "Игра завершена!",
+    "correct": "Правильно",
+    "wrong": "Неправильно",
+    "seeResults": "Посмотреть результаты",
+    "nextQuestion": "Следующий вопрос",
+    "finish": "Завершить"
+  },
+  "whoIsIt": {
+    "title": "Кто это?",
+    "description": "Сопоставьте слова с картинками",
+    "wordToPicture": "Слово к картинке",
+    "pictureToWord": "Картинка к слову",
+    "signToWord": "Жест к слову",
+    "findPictureFor": "Найдите картинку для:",
+    "whatIsThis": "Что это?",
+    "whatSignIsThis": "Какой это жест?",
+    "greatJob": "Отлично!",
+    "tryAgain": "Попробуйте еще раз!"
+  },
+  "findPair": {
+    "title": "Найди пару",
+    "description": "Игра на память",
+    "faceUp": "Лицом вверх",
+    "faceDown": "Лицом вниз",
+    "moves": "Ходов:",
+    "wellDone": "Отлично!",
+    "youWon": "Вы выиграли за {moves} ходов!"
+  },
+  "whoDisappeared": {
+    "title": "Кто исчез?",
+    "description": "Запомните и найдите пропавший предмет",
+    "itemCount": "Количество предметов",
+    "memorize": "Запомните!",
+    "guess": "Кто исчез?",
+    "timeLeft": "Осталось времени:"
+  },
+  "themes": {
+    "actionWords": "Действия",
+    "animals": "Животные",
+    "bodyParts": "Части тела",
+    "clothes": "Одежда",
+    "colors": "Цвета",
+    "dishes": "Посуда",
+    "food": "Еда",
+    "furniture": "Мебель",
+    "householdAppliances": "Бытовая техника",
+    "insects": "Насекомые",
+    "naturalPhenomena": "Природные явления",
+    "occupations": "Профессии",
+    "places": "Места",
+    "schoolSupplies": "Школьные принадлежности",
+    "transport": "Транспорт",
+    "vegetables": "Овощи",
+    "wildAnimals": "Дикие животные"
+  },
+  "settings": {
+    "language": "Язык",
+    "english": "English",
+    "russian": "Русский",
+    "uzbek": "O'zbek"
+  }
+}

@@ -63,8 +63,23 @@ p, span, div {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.p-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.5);
+}
+
 .p-button-rounded {
   border-radius: 50%;
+}
+
+/* Fix white-on-white button issues */
+.p-button:not([class*="p-button-"]) {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.p-button:not([class*="p-button-"]):hover {
+  background: linear-gradient(135deg, #5568d3 0%, #63348b 100%);
+  color: white;
 }
 
 /* Cards */

@@ -6,9 +6,9 @@
         class="back-button"
         rounded
         @click="$emit('back')"
-        aria-label="Go back"
+        :aria-label="$t('theme.backButton')"
       />
-      <h2 class="theme-title">{{ theme.name }}</h2>
+      <h2 class="theme-title">{{ getThemeName(theme.id) }}</h2>
     </div>
 
     <div class="menu-items">
@@ -31,7 +31,10 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
 import Button from 'primevue/button'
+
+const { t } = useI18n()
 
 defineProps({
   theme: {
@@ -45,11 +48,35 @@ defineProps({
 })
 
 defineEmits(['select', 'back'])
+
+const themeNameMap = {
+  'action-words': 'themes.actionWords',
+  'animals': 'themes.animals',
+  'body-parts': 'themes.bodyParts',
+  'clothes': 'themes.clothes',
+  'colors': 'themes.colors',
+  'dishes': 'themes.dishes',
+  'food': 'themes.food',
+  'furniture': 'themes.furniture',
+  'household-appliances': 'themes.householdAppliances',
+  'insects': 'themes.insects',
+  'natural-phenomena': 'themes.naturalPhenomena',
+  'occupations': 'themes.occupations',
+  'places': 'themes.places',
+  'school-supplies': 'themes.schoolSupplies',
+  'transports': 'themes.transport',
+  'vegetables': 'themes.vegetables',
+  'wild-animals': 'themes.wildAnimals'
+}
+
+const getThemeName = (themeId) => {
+  return t(themeNameMap[themeId] || 'themes.animals')
+}
 </script>
 
 <style scoped>
 .side-menu {
-  height: 100%;
+  height: calc(100dvh - 40px);
   display: flex;
   flex-direction: column;
   border-radius: 20px;
@@ -71,13 +98,14 @@ defineEmits(['select', 'back'])
   width: 50px;
   height: 50px;
   font-size: 1.5rem;
-  background: white;
-  color: #333;
-  border: 3px solid rgba(0, 0, 0, 0.1);
+  background: white !important;
+  color: #333 !important;
+  border: 3px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 .back-button:hover {
-  background: #f0f0f0;
+  background: #f0f0f0 !important;
+  color: #333 !important;
   transform: scale(1.05);
 }
 
@@ -92,7 +120,10 @@ defineEmits(['select', 'back'])
 .menu-items {
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 16px;
+  min-height: 0; /* Important for flex scrolling */
+  max-height: 100%; /* Prevent overflow */
 }
 
 .menu-item {

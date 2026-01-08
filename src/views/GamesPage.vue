@@ -1,19 +1,23 @@
 <template>
   <div class="games-page">
+    <div class="language-switcher-container">
+      <LanguageSwitcher />
+    </div>
+
     <header class="page-header">
       <Button
         icon="pi pi-arrow-left"
         class="back-button"
         rounded
         @click="goBack"
-        aria-label="Go back"
+        :aria-label="$t('games.backButton')"
       />
       <div class="header-content">
         <h1 class="main-title">
           <i class="pi pi-gamepad"></i>
-          Fun Games!
+          {{ $t('games.title') }}
         </h1>
-        <p class="subtitle">Choose a game to play and have fun learning!</p>
+        <p class="subtitle">{{ $t('games.subtitle') }}</p>
       </div>
     </header>
 
@@ -32,6 +36,7 @@
 import { useRouter } from 'vue-router'
 import Button from 'primevue/button'
 import GameCard from '@/components/common/GameCard.vue'
+import LanguageSwitcher from '@/components/common/LanguageSwitcher.vue'
 import { games } from '@/data/games'
 
 const router = useRouter()
@@ -50,6 +55,15 @@ const goBack = () => {
   min-height: 100vh;
   padding: 40px 20px;
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  position: relative;
+}
+
+.language-switcher-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  animation: fadeIn 0.6s ease-out;
 }
 
 .page-header {
@@ -66,14 +80,15 @@ const goBack = () => {
   width: 60px;
   height: 60px;
   font-size: 1.5rem;
-  background: white;
-  color: #333;
-  border: 3px solid rgba(255, 255, 255, 0.5);
+  background: white !important;
+  color: #333 !important;
+  border: 3px solid rgba(255, 255, 255, 0.5) !important;
 }
 
 .back-button:hover {
   transform: scale(1.1);
-  background: #f0f0f0;
+  background: #f0f0f0 !important;
+  color: #333 !important;
 }
 
 .header-content {

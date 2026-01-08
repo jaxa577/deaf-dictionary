@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import i18n from './i18n'
 
 // PrimeVue
 import PrimeVue from 'primevue/config'
@@ -33,6 +34,7 @@ app.use(PrimeVue, {
 })
 
 app.use(router)
+app.use(i18n)
 
 // Register global components
 app.component('Button', Button)

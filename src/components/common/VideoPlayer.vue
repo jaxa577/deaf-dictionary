@@ -2,7 +2,7 @@
   <div class="video-player">
     <div class="video-container">
       <video
-        v-if="useVideo && videoSrc"
+        v-if="useVideo && videoSrc && !videoError"
         ref="videoElement"
         :src="videoSrc"
         class="sign-video"
@@ -13,36 +13,16 @@
         @error="handleVideoError"
       />
       <img
-        v-else-if="gifSrc"
+        v-else-if="gifSrc && !gifError"
         :src="gifSrc"
         :alt="alt"
         class="sign-gif"
+        @error="handleGifError"
       />
       <div v-else class="video-placeholder">
         <i class="pi pi-play-circle"></i>
         <p>Video not available</p>
       </div>
-    </div>
-
-    <div class="video-controls">
-      <Button
-        v-if="videoSrc"
-        :icon="isPlaying ? 'pi pi-pause' : 'pi pi-play'"
-        class="control-button"
-        rounded
-        size="large"
-        @click="togglePlay"
-        :aria-label="isPlaying ? 'Pause' : 'Play'"
-      />
-      <Button
-        v-if="videoSrc"
-        icon="pi pi-refresh"
-        class="control-button"
-        rounded
-        size="large"
-        @click="replay"
-        aria-label="Replay"
-      />
     </div>
 
     <p v-if="caption" class="video-caption">{{ caption }}</p>
@@ -51,7 +31,6 @@
 
 <script setup>
 import { ref, watch, onMounted } from 'vue'
-import Button from 'primevue/button'
 
 const props = defineProps({
   videoSrc: {
@@ -77,40 +56,29 @@ const props = defineProps({
 })
 
 const videoElement = ref(null)
-const isPlaying = ref(true)
-
-const togglePlay = () => {
-  if (videoElement.value) {
-    if (isPlaying.value) {
-      videoElement.value.pause()
-    } else {
-      videoElement.value.play()
-    }
-    isPlaying.value = !isPlaying.value
-  }
-}
-
-const replay = () => {
-  if (videoElement.value) {
-    videoElement.value.currentTime = 0
-    videoElement.value.play()
-    isPlaying.value = true
-  }
-}
+const videoError = ref(false)
+const gifError = ref(false)
 
 const handleVideoError = () => {
-  console.error('Error loading video:', props.videoSrc)
+  videoError.value = true
+}
+
+const handleGifError = () => {
+  gifError.value = true
 }
 
 watch(() => props.videoSrc, () => {
-  isPlaying.value = true
+  videoError.value = false
+})
+
+watch(() => props.gifSrc, () => {
+  gifError.value = false
 })
 
 onMounted(() => {
   if (videoElement.value) {
-    videoElement.value.play().catch(err => {
-      console.error('Autoplay failed:', err)
-      isPlaying.value = false
+    videoElement.value.play().catch(() => {
+      // Silently handle autoplay failures
     })
   }
 })
@@ -159,29 +127,6 @@ onMounted(() => {
 .video-placeholder i {
   font-size: 4rem;
   margin-bottom: 16px;
-}
-
-.video-controls {
-  display: flex;
-  gap: 16px;
-}
-
-.control-button {
-  width: 60px;
-  height: 60px;
-  font-size: 1.8rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-}
-
-.control-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
-}
-
-.control-button:active {
-  transform: scale(1.05);
 }
 
 .video-caption {

@@ -1,11 +1,15 @@
 <template>
   <div class="home-page">
+    <div class="language-switcher-container">
+      <LanguageSwitcher />
+    </div>
+
     <header class="page-header">
       <h1 class="main-title">
         <i class="pi pi-book"></i>
-        Learn Sign Language
+        {{ $t('app.title') }}
       </h1>
-      <p class="subtitle">Choose a theme to start learning!</p>
+      <p class="subtitle">{{ $t('home.subtitle') }}</p>
     </header>
 
     <div class="themes-grid">
@@ -19,7 +23,7 @@
 
     <div class="games-section">
       <Button
-        label="Play Games!"
+        :label="$t('home.gamesButton')"
         icon="pi pi-gamepad"
         class="games-button"
         size="large"
@@ -33,6 +37,7 @@
 import { useRouter } from 'vue-router'
 import Button from 'primevue/button'
 import ThemeCard from '@/components/common/ThemeCard.vue'
+import LanguageSwitcher from '@/components/common/LanguageSwitcher.vue'
 import { themes } from '@/data/themes'
 
 const router = useRouter()
@@ -51,6 +56,15 @@ const goToGames = () => {
   min-height: 100vh;
   padding: 40px 20px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+}
+
+.language-switcher-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  animation: fadeIn 0.6s ease-out;
 }
 
 .page-header {
@@ -101,13 +115,16 @@ const goToGames = () => {
   font-size: 2rem;
   padding: 24px 48px;
   border-radius: 50px;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  border: none;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+  border: none !important;
   box-shadow: 0 8px 24px rgba(245, 87, 108, 0.4);
   transition: all 0.3s ease;
+  color: white !important;
 }
 
 .games-button:hover {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+  color: white !important;
   transform: scale(1.1) rotate(-2deg);
   box-shadow: 0 12px 32px rgba(245, 87, 108, 0.6);
 }
