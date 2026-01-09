@@ -164,9 +164,23 @@ const goBack = () => {
 
 // Mapping for theme IDs to their translation category names
 const themeToItemCategory = {
+  'action-words': 'actionWords',
+  'animals': 'animals',
   'body-parts': 'bodyParts',
+  'clothes': 'clothes',
+  'colors': 'colors',
+  'dishes': 'dishes',
+  'food': 'food',
+  'furniture': 'furniture',
+  'household-appliances': 'householdAppliances',
+  'insects': 'insects',
+  'natural-phenomena': 'naturalPhenomena',
   'occupations': 'occupations',
-  'places': 'places'
+  'places': 'places',
+  'school-supplies': 'schoolSupplies',
+  'transports': 'transports',
+  'vegetables': 'vegetables',
+  'wild-animals': 'wildAnimals'
 };
 
 const getItemName = (themeId, itemId) => {

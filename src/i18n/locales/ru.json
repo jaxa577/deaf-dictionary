@@ -90,6 +90,35 @@
     "uzbek": "O'zbek"
   },
   "items": {
+    "actionWords": {
+      "draw": "Рисовать",
+      "drink": "Пить",
+      "eat": "Есть",
+      "jump": "Прыгать",
+      "lie": "Лежать",
+      "play": "Играть",
+      "read": "Читать",
+      "run": "Бежать",
+      "seat": "Сидеть",
+      "stand": "Стоять",
+      "walk": "Ходить",
+      "write": "Писать"
+    },
+    "animals": {
+      "cat": "Кошка",
+      "chicken": "Курица",
+      "cock": "Петух",
+      "cow": "Корова",
+      "dog": "Собака",
+      "donkey": "Осёл",
+      "duck": "Утка",
+      "goat": "Коза",
+      "goose": "Гусь",
+      "horse": "Лошадь",
+      "rabbit": "Кролик",
+      "sheep": "Овца",
+      "turkey": "Индюк"
+    },
     "bodyParts": {
       "ear": "Ухо",
       "eye": "Глаз",
@@ -99,6 +128,91 @@
       "leg": "Нога",
       "nose": "Нос",
       "tongue": "Язык"
+    },
+    "clothes": {
+      "boots": "Сапоги",
+      "dress": "Платье",
+      "hat": "Шапка",
+      "jacket": "Куртка",
+      "pants": "Штаны",
+      "scarf": "Шарф",
+      "shoes": "Туфли",
+      "skirt": "Юбка",
+      "sneakers": "Кроссовки",
+      "socks": "Носки",
+      "sweater": "Свитер",
+      "t-shirt": "Футболка",
+      "tank-top": "Майка"
+    },
+    "colors": {
+      "black": "Чёрный",
+      "blue": "Синий",
+      "brown": "Коричневый",
+      "green": "Зелёный",
+      "light-blue": "Голубой",
+      "orange": "Оранжевый",
+      "pink": "Розовый",
+      "red": "Красный",
+      "yellow": "Жёлтый"
+    },
+    "dishes": {
+      "bowl": "Миска",
+      "cauldron": "Казан",
+      "cup": "Чашка",
+      "fork": "Вилка",
+      "glass": "Стакан",
+      "pan": "Сковорода",
+      "plate": "Тарелка",
+      "spoon-knife-fork": "Столовые приборы",
+      "teapot": "Чайник"
+    },
+    "food": {
+      "bread": "Хлеб",
+      "butter": "Масло",
+      "egg": "Яйцо",
+      "meat": "Мясо",
+      "milk": "Молоко",
+      "porridge": "Каша",
+      "salt": "Соль",
+      "soup": "Суп",
+      "sugar": "Сахар",
+      "water": "Вода"
+    },
+    "furniture": {
+      "armchair": "Кресло",
+      "bed": "Кровать",
+      "chair": "Стул",
+      "mirror": "Зеркало",
+      "sofa": "Диван",
+      "table": "Стол",
+      "wardrobe": "Шкаф"
+    },
+    "householdAppliances": {
+      "computer": "Компьютер",
+      "fridge": "Холодильник",
+      "iron": "Утюг",
+      "stove": "Плита",
+      "tv": "Телевизор",
+      "vaccum-cleaner": "Пылесос",
+      "washing-machine": "Стиральная машина"
+    },
+    "insects": {
+      "ant": "Муравей",
+      "bee": "Пчела",
+      "butterfly": "Бабочка",
+      "cockroach": "Таракан",
+      "fly": "Муха",
+      "grasshopper": "Кузнечик",
+      "mosquito": "Комар"
+    },
+    "naturalPhenomena": {
+      "cloud": "Облако",
+      "day": "День",
+      "night": "Ночь",
+      "rain": "Дождь",
+      "snow": "Снег",
+      "sun": "Солнце",
+      "wind": "Ветер"
     },
     "occupations": {
       "builder": "Строитель",
@@ -121,6 +235,61 @@
       "school": "Школа",
       "store": "Магазин",
       "street": "Улица"
+    },
+    "schoolSupplies": {
+      "album": "Альбом",
+      "backpack": "Рюкзак",
+      "book": "Книга",
+      "brush": "Кисточка",
+      "colored-pencils": "Цветные карандаши",
+      "eraser": "Ластик",
+      "glue": "Клей",
+      "notebook": "Тетрадь",
+      "paints": "Краски",
+      "pen": "Ручка",
+      "pencil-case": "Пенал",
+      "pencil": "Карандаш",
+      "plasticine": "Пластилин",
+      "ruler": "Линейка",
+      "scissors": "Ножницы"
+    },
+    "transports": {
+      "bicycle": "Велосипед",
+      "bus": "Автобус",
+      "car": "Машина",
+      "helicopter": "Вертолёт",
+      "motorbike": "Мотоцикл",
+      "plane": "Самолёт",
+      "ship": "Корабль",
+      "tractor": "Трактор",
+      "train": "Поезд",
+      "truck": "Грузовик"
+    },
+    "vegetables": {
+      "cabbage": "Капуста",
+      "carrot": "Морковь",
+      "cucumber": "Огурец",
+      "eggplant": "Баклажан",
+      "garlic": "Чеснок",
+      "onion": "Лук",
+      "pepper": "Перец",
+      "potato": "Картофель",
+      "pumpkin": "Тыква",
+      "tomato": "Помидор",
+      "watermelon": "Арбуз"
+    },
+    "wildAnimals": {
+      "bear": "Медведь",
+      "crocodile": "Крокодил",
+      "elephant": "Слон",
+      "fox": "Лиса",
+      "giraffe": "Жираф",
+      "hippopotamus": "Бегемот",
+      "lion": "Лев",
+      "monkey": "Обезьяна",
+      "rabbit": "Заяц",
+      "tiger": "Тигр",
+      "wolf": "Волк"
     }
   }
 }
