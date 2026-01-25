@@ -20,30 +20,32 @@
         <div v-if="activeItem" class="item-display">
           <!-- Item Name -->
           <div class="item-header">
-            <h1 class="item-name">{{ getItemName(theme.id, activeItem.id) }}</h1>
+            <h1 class="item-name">
+              {{ getItemName(theme.id, activeItem.id) }}
+            </h1>
             <p v-if="activeItem.description" class="item-description">
               {{ activeItem.description }}
             </p>
           </div>
 
           <!-- Item Image -->
-          <!-- <div class="item-image-video-wrapper"> -->
-          <div class="item-image-container">
-            <img
-              :src="activeItem.image"
-              :alt="activeItem.name"
-              class="item-image"
+          <div class="item-image-video-wrapper">
+            <div class="item-image-container">
+              <img
+                :src="activeItem.image"
+                :alt="activeItem.name"
+                class="item-image"
+              />
+            </div>
+
+            <!-- Sign Language Video -->
+            <VideoPlayer
+              :video-src="activeItem.signVideo"
+              :gif-src="activeItem.signGif"
+              :alt="`Sign language for ${activeItem.name}`"
+              :caption="`Sign: ${activeItem.name}`"
             />
           </div>
-
-          <!-- Sign Language Video -->
-          <VideoPlayer
-            :video-src="activeItem.signVideo"
-            :gif-src="activeItem.signGif"
-            :alt="`Sign language for ${activeItem.name}`"
-            :caption="`Sign: ${activeItem.name}`"
-          />
-          <!-- </di v> -->
 
           <!-- Navigation Buttons -->
           <div class="navigation-buttons">
@@ -69,7 +71,7 @@
 
         <div v-else class="no-item">
           <i class="pi pi-info-circle"></i>
-          <p>{{ $t('theme.selectItem') }}</p>
+          <p>{{ $t("theme.selectItem") }}</p>
         </div>
       </main>
     </div>
@@ -118,7 +120,7 @@ watch(
   () => route.params.themeId,
   () => {
     loadTheme();
-  }
+  },
 );
 
 // Active item
@@ -164,23 +166,23 @@ const goBack = () => {
 
 // Mapping for theme IDs to their translation category names
 const themeToItemCategory = {
-  'action-words': 'actionWords',
-  'animals': 'animals',
-  'body-parts': 'bodyParts',
-  'clothes': 'clothes',
-  'colors': 'colors',
-  'dishes': 'dishes',
-  'food': 'food',
-  'furniture': 'furniture',
-  'household-appliances': 'householdAppliances',
-  'insects': 'insects',
-  'natural-phenomena': 'naturalPhenomena',
-  'occupations': 'occupations',
-  'places': 'places',
-  'school-supplies': 'schoolSupplies',
-  'transports': 'transports',
-  'vegetables': 'vegetables',
-  'wild-animals': 'wildAnimals'
+  "action-words": "actionWords",
+  animals: "animals",
+  "body-parts": "bodyParts",
+  clothes: "clothes",
+  colors: "colors",
+  dishes: "dishes",
+  food: "food",
+  furniture: "furniture",
+  "household-appliances": "householdAppliances",
+  insects: "insects",
+  "natural-phenomena": "naturalPhenomena",
+  occupations: "occupations",
+  places: "places",
+  "school-supplies": "schoolSupplies",
+  transports: "transports",
+  vegetables: "vegetables",
+  "wild-animals": "wildAnimals",
 };
 
 const getItemName = (themeId, itemId) => {
@@ -194,7 +196,7 @@ const getItemName = (themeId, itemId) => {
     }
   }
   // Fallback: find the item in theme.items and return its default name
-  const item = theme.value?.items?.find(i => i.id === itemId);
+  const item = theme.value?.items?.find((i) => i.id === itemId);
   return item?.name || itemId;
 };
 </script>
@@ -271,7 +273,7 @@ const getItemName = (themeId, itemId) => {
 .item-description {
   font-size: 1.4rem;
   color: #666;
-  margin: 0;
+  margin: 0;  
   line-height: 1.6;
 }
 .item-image-video-wrapper {
@@ -279,7 +281,6 @@ const getItemName = (themeId, itemId) => {
   gap: 32px;
   /* flex-wrap: wrap; */
   justify-content: center;
-  align-items: center;
 }
 .item-image-container {
   width: 100%;
